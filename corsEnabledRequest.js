@@ -1,6 +1,6 @@
-define(["dojo/_base/declare", "dojo/request"], (declare, request) => {
-    return declare("requestWrap", null, {
-        corsEnabledRequest: (uri, dataSet = null) => {
+define(["dojo/_base/declare", "dojo/request"], function(declare, request) {
+    return declare("dojoCorsRequest", null, {
+        corsEnabledRequest: function(uri, dataSet) {
             return request.post(uri, {
                 data: dataSet,
                 handleAs: "jsonp",
